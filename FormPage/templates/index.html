@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Apllication</title>
+    <link rel = "stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+</head>
+<body>
+    <form action="/" method="post">
+        <div>
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" required>
+        </div>
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" minlength="8" required>
+        </div>
+         <div>
+          <label for="birthday">Date of birth:</label>
+          <input type="date" id="birthday" name="birthday" max="2021-02-07" required>
+        </div>
+        <div>
+          <label for="gender">Gender:</label>
+          <input type="radio" name="gender" id="male">
+        <label for="male">Male</label>
+      
+        <input type="radio" name="gender" id="female" checked>
+        <label for="female">Female</label>
+      
+        <input type="radio" name="gender" id="other">
+        <label for="other">Other</label> 
+        </div>
+        <div>
+          <label for="nationalities">Choose a nationality:</label>
+      <select  name="nationalities" id="nationalities">
+        <optgroup label="First nationality">
+          <option value="dreamer">Dreamer</option>
+          <option value="worker">Worker</option>
+        </optgroup>
+        <optgroup label="Second nationality">
+          <option value="morning person">Morning person</option>
+          <option value="night person">Night person</option>
+        </optgroup>
+      </select>
+        </div>
+        <div>
+          <label for="reason">Tell us why you want to register: </label>
+          <br>
+      <textarea name="comment" id="reason" rows="10" cols="40">
+      </textarea>
+        </div>
+        <input type="submit" value="Submit">
+      </form>
+</body>
+</html>
+

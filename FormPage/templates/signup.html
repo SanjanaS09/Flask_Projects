@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
+{% endblock %}
+
+{% block content %}
+<h2>Signup</h2>
+
+<!-- Display form errors -->
+{% for field in form %}
+  {% if field.errors %}
+    <ul class="errors">
+      {% for error in field.errors %}
+        <li>{{ error }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endfor %}
+
+<form action="/" method="post">
+  {{ form.hidden_tag() }} <!-- CSRF token -->
+
+  <div>
+    <label for="username">Username:</label>
+    {{ form.username(size=20, id="username") }}
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    {{ form.email(size=20, id="email") }}
+  </div>
+
+  <div>
+    <label for="password">Password:</label>
+    {{ form.password(size=20, id="password") }}
+  </div>
+
+  <div>
+    <label for="birthday">Date of birth:</label>
+    {{ form.birthday(id="birthday") }}
+  </div>
+
+  <div>
+    <label for="gender">Gender:</label>
+    {{ form.gender(id="gender") }}
+  </div>
+  <input type="submit" value="Submit">
+</form>
+
+{% endblock %}
