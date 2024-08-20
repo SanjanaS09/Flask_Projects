@@ -1,0 +1,7 @@
+{
+    "user":[
+        {"name":"John","email":"John@abc.com" ,"password":"987654321"},
+        {"name":"Anna","email":"Anna@abc.com", "password":"12345678"},
+        {"name":"Peter","email":"Peter@abc.com", "password":"15975312"}
+    ]
+    }
