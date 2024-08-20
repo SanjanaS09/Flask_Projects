@@ -37,7 +37,7 @@ def download():
     filtered_df.to_csv(output, index=False)
     output.seek(0)
 
-    return Response(output, mimetype="text/csv")
+    return send_file(output, as_attachment=True, download_name="extracted_data.csv", mimetype='csv')
 
 if __name__ == '__main__':
     app.run(debug=True)
